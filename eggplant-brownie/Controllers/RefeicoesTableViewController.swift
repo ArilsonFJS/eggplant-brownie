@@ -11,6 +11,27 @@ class RefeicoesTableViewController: UITableViewController, AdicionaRefeicaoDeleg
     
     var refeicoes: Array<Refeicao> = []
     
+    override func viewDidLoad() {
+        //Criando diretorio onde o sera salvo o arquivo de refeicoes
+        guard let diretorio = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first
+        else { return }
+        
+        //Criando uma nova pasta para salvar as refeicoes
+        let caminho = diretorio.appendingPathComponent("refeicoes")
+        
+        do{
+            //Pegar os dados que estao salvos
+            let dados = try Data(contentsOf: caminho)
+            //Converter a lista de refeicoes
+            guard let refeicoesSalvas = try NSKeyedUnarchiver.unarchiveTopLevelObjectWithData(dados) as? Array<Refeicao> else {return}
+            //Apresentando as refeicoes salvas assim que a aplicao for carregada
+            refeicoes = refeicoesSalvas
+        }catch{
+            print(error.localizedDescription)
+        }
+        
+    }
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         refeicoes.count
     }
