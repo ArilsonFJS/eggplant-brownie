@@ -48,6 +48,25 @@ class RefeicoesTableViewController: UITableViewController, AdicionaRefeicaoDeleg
     func add(_ refeicao: Refeicao){
         refeicoes.append(refeicao)
         tableView.reloadData()
+        
+        //Criando diretorio onde o sera salvo o arquivo de refeicoes
+        guard let diretorio = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first
+        else { return }
+        
+        //Criando uma nova pasta para salvar as refeicoes
+        let caminho = diretorio.appendingPathComponent("refeicoes")
+        
+        //Tratamendo de erro
+        do{
+            //Salvando a lista de refeicoes
+            let dados = try NSKeyedArchiver.archivedData(withRootObject: refeicoes, requiringSecureCoding: false)
+            
+            //Criar os arquivos
+            try dados.write(to: caminho)
+        }catch{
+            print(error.localizedDescription)
+        }
+        
     }
     
     //Pega o destino no qual o segue esta sendo preparado para instaciar
