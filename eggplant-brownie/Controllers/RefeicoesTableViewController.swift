@@ -12,12 +12,8 @@ class RefeicoesTableViewController: UITableViewController, AdicionaRefeicaoDeleg
     var refeicoes: Array<Refeicao> = []
     
     override func viewDidLoad() {
-        //Criando diretorio onde o sera salvo o arquivo de refeicoes
-        guard let diretorio = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first
-        else { return }
         
-        //Criando uma nova pasta para salvar as refeicoes
-        let caminho = diretorio.appendingPathComponent("refeicoes")
+        guard let caminho = recuperarCaminho() else {return}
         
         do{
             //Pegar os dados que estao salvos
@@ -30,6 +26,15 @@ class RefeicoesTableViewController: UITableViewController, AdicionaRefeicaoDeleg
             print(error.localizedDescription)
         }
         
+    }
+    
+    func recuperarCaminho () -> URL? {
+        //Criando diretorio onde o sera salvo o arquivo de refeicoes
+        guard let diretorio = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first else { return nil}
+        
+        //Criando uma nova pasta para salvar as refeicoes
+        let caminho = diretorio.appendingPathComponent("refeicoes")
+        return caminho
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -70,12 +75,7 @@ class RefeicoesTableViewController: UITableViewController, AdicionaRefeicaoDeleg
         refeicoes.append(refeicao)
         tableView.reloadData()
         
-        //Criando diretorio onde o sera salvo o arquivo de refeicoes
-        guard let diretorio = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first
-        else { return }
-        
-        //Criando uma nova pasta para salvar as refeicoes
-        let caminho = diretorio.appendingPathComponent("refeicoes")
+        guard let caminho = recuperarCaminho() else {return}
         
         //Tratamendo de erro
         do{
