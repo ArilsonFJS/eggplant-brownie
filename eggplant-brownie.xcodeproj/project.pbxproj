@@ -13,6 +13,7 @@
 		B4B1F161294E886600AE2273 /* RemoveRefeicaoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4B1F160294E886600AE2273 /* RemoveRefeicaoViewController.swift */; };
 		B4CE5B76293D6A9000D44D63 /* RefeicoesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4CE5B75293D6A9000D44D63 /* RefeicoesTableViewController.swift */; };
 		B4DE6C29296C8C19004A48EB /* RefeicaoDao.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4DE6C28296C8C19004A48EB /* RefeicaoDao.swift */; };
+		B4DE6C2B296C8F63004A48EB /* ItemDao.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4DE6C2A296C8F63004A48EB /* ItemDao.swift */; };
 		B4F2A4FA29396F65002F122C /* Refeicao.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4F2A4F929396F65002F122C /* Refeicao.swift */; };
 		B4F2A4FC2939703D002F122C /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4F2A4FB2939703D002F122C /* Item.swift */; };
 		B4F36B9128F22AFA00C6F61A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4F36B9028F22AFA00C6F61A /* AppDelegate.swift */; };
@@ -31,6 +32,7 @@
 		B4BF574129172C8900045CB6 /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		B4CE5B75293D6A9000D44D63 /* RefeicoesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefeicoesTableViewController.swift; sourceTree = "<group>"; };
 		B4DE6C28296C8C19004A48EB /* RefeicaoDao.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefeicaoDao.swift; sourceTree = "<group>"; };
+		B4DE6C2A296C8F63004A48EB /* ItemDao.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDao.swift; sourceTree = "<group>"; };
 		B4F2A4F929396F65002F122C /* Refeicao.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Refeicao.swift; sourceTree = "<group>"; };
 		B4F2A4FB2939703D002F122C /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		B4F36B8D28F22AFA00C6F61A /* eggplant-brownie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "eggplant-brownie.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -61,6 +63,7 @@
 				B4F2A4FB2939703D002F122C /* Item.swift */,
 				B48601AA294A8E0500231378 /* Alerta.swift */,
 				B4DE6C28296C8C19004A48EB /* RefeicaoDao.swift */,
+				B4DE6C2A296C8F63004A48EB /* ItemDao.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -193,6 +196,7 @@
 				B4F2A4FC2939703D002F122C /* Item.swift in Sources */,
 				B4F36B9528F22AFA00C6F61A /* ViewController.swift in Sources */,
 				B4B1F161294E886600AE2273 /* RemoveRefeicaoViewController.swift in Sources */,
+				B4DE6C2B296C8F63004A48EB /* ItemDao.swift in Sources */,
 				B4DE6C29296C8C19004A48EB /* RefeicaoDao.swift in Sources */,
 				B462233C29454309004E234F /* AdicionarItensViewController.swift in Sources */,
 				B4F36B9128F22AFA00C6F61A /* AppDelegate.swift in Sources */,
